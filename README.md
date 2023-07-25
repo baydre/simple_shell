@@ -1,7 +1,7 @@
 # Simple Shell
 This project is about programming a simple Unix shell. A shell is an interactive command-line interpreter that allows users to interact with the operating system by typing commands. We created a shell that would utilize the command line interface (CLI) that allows users to type in a defined set of commands (e.g. `rm` to remove files, `cat` to combine word documents, etc) and have the operating system run the appropriate function.
 
-<br>This UNIX shell is a simpler version that handles memory leaks and has basic functionality. It can create, write, read, open, or remove folders, print things to the terminal, change directories, print where you are in the system, etc.
+This UNIX shell is a simpler version that handles memory leaks and has basic functionality. It can create, write, read, open, or remove folders, print things to the terminal, change directories, print where you are in the system, etc.
 
 # Background
 
@@ -9,10 +9,11 @@ This project is about programming a simple Unix shell. A shell is an interactive
 
 *“The Gates of Shell”*, by [Yasir Musa](https://twitter.com/baydre_africa), featuring [Ogu Jessica Chidera](https://twitter.com/ogujessica2)
 
-The original Unix operating system was designed and implemented by a team of computer scientists at Bell Labs in the 1970s. The primary contributors to Unix were Ken Thompson, Dennis Ritchie, and others. Ken Thompson is a computer scientist and one of the key figures in the development of Unix and the C programming language. He co-designed and implemented the original Unix operating system and made significant contributions to the field of computer science.
-<br>A Unix command line interpreter, also known as a shell, is a program that provides a command-line interface for users to interact with an operating system. When you enter a command in a shell, the shell interprets it and executes the corresponding action. It acts as an intermediary between the user and the operating system, allowing users to run programs, manipulate files, and perform various tasks.
+The original UNIX operating system was designed and implemented by a team of computer scientists at Bell Labs in the 1970s. The primary contributors to UNIX were Ken Thompson, Dennis Ritchie, and others. Ken Thompson is a computer scientist and one of the key figures in the development of UNIX and the C programming language. Together, (with other personalities mentioned above) they co-designed and implemented the original UNIX operating system and made significant contributions to the field of computer science.
 
-The most commonly used Unix shell is called `Bash` (short for Bourne-Again SHell), but there are other shells available, such as `zsh`, `ksh`, and `csh`. The shell provides a set of built-in commands, such as `cd` (change directory) and `ls` (list directory contents), as well as the ability to execute external programs by specifying their file path or name.
+A UNIX command line interpreter, also known as a shell, is a program that provides a command-line interface for users to interact with an operating system. When you enter a command in a shell, the shell interprets it and executes the corresponding action. It acts as an intermediary between the user and the operating system, allowing users to run programs, manipulate files, and perform various tasks.
+
+The most commonly used UNIX shell is called `bash` (short for Bourne-Again SHell), but there are other shells available, such as `zsh`, `ksh`, and `csh`. The shell provides a set of built-in commands, such as `cd` (change directory) and `ls` (list directory contents), as well as the ability to execute external programs by specifying their file path or name.
 
 The UNIX command line interface is often preferred by advanced users because it allows more powerful and efficient interaction with the system compared to graphical user interfaces. It also provides access to a wide range of powerful UNIX utilities and tools that can be combined and piped together to perform complex tasks.
 
