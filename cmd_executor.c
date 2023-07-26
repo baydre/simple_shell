@@ -3,6 +3,7 @@
 /**
  * execute_command - creates and executes a child process
  * using 'fork' and 'execve'.
+ * @command: user input
  * @args: arguments to be executed.
  */
 void execute_command(char *command, char **args)
