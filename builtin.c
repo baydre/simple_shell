@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * isExit - handles exit commands in the shell
+ * @tokens: tokenizes the argument
+ * Return: Returns 0.
+ */
 
 int isExit(char **tokens)
 {
@@ -11,6 +15,11 @@ int isExit(char **tokens)
 	return (0);
 }
 
+/**
+ * isEnv - handles environment variable in the shell
+ * @tokens: tokenizes the argument
+ * Return: Returns 0.
+ */
 int isEnv(char **tokens)
 {
 	/* "env" built-in */
