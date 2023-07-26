@@ -10,7 +10,7 @@ void prompt_display(void)
 
 /**
  * cmd_read - reads command from STDIN.
- * Return: command.
+ * Return: it returns command.
  */
 char *cmd_read(void)
 {
