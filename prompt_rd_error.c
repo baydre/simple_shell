@@ -32,6 +32,7 @@ char *cmd_read(void)
 
 /**
  * write_error_message - displays error message to the STDOUT.
+ * @command: User Input
  */
 void write_error_message(const char *command)
 {

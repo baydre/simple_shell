@@ -2,6 +2,7 @@
 
 /**
  * tokenise - tokenises the array of tokens
+ * @command: user input
  * Return: the token count.
  */
 char **tokenise(char *command)
