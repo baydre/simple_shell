@@ -5,7 +5,7 @@
  * using 'fork' and 'execve'.
  * @args: arguments to be executed. 
  */
-void execute_command(char **args)
+void execute_command(char *command, char **args)
 {
 	pid_t c_pro;
 	int status;
@@ -18,8 +18,8 @@ void execute_command(char **args)
 	}
 	else if (c_pro == 0)
 	{
-		execvp(args[0], args);
-		perror(args[0]);
+		execve(command, args, environ);
+		perror("execve");
 		exit(EXIT_FAILURE);
 	}
 	else
