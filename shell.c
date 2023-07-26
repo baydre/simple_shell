@@ -8,24 +8,24 @@ int main(void)
 {
 	char *command, *str_path, *fetch_get = getenv("PATH");
 	char **tokens;
-	
+
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
 			prompt_display();
-		
+
 		command = cmd_read();
 
 		tokens = tokenise(command);
 		if (tokens == NULL)
 		{
-                        free(command);
-                        continue;
+			free(command);
+			continue;
 		}
 		if (isExit(tokens))
-                        break;
-                if (isEnv(tokens))
-                        continue;
+			break;
+		if (isEnv(tokens))
+			continue;
 		if (access(tokens[0], X_OK) == -1)
 		{
 			str_path = witch(tokens[0], fetch_get);
