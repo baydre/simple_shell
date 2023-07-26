@@ -40,4 +40,3 @@ void write_error_message(const char *command)
 	write(STDERR_FILENO, command, strlen(command));
 	write(STDERR_FILENO, error_message, strlen(error_message));
 }
-
