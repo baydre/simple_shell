@@ -5,8 +5,9 @@
 
 #include "main.h"
 /**
- * file_finder -
- * path:
+ * find_file - checks for file PATH.
+ * @path: PATH
+ * Return: zero 0.
  */
 int find_file(char *path)
 {
@@ -16,9 +17,10 @@ int find_file(char *path)
 }
 
 /**
- * witch -
- * filename:
- * path:
+ * witch - checks for full PATH.
+ * @filename: name of file
+ * @path: PATH
+ * Return: NULL
  */
 char *witch(char *filename, char *path)
 {
