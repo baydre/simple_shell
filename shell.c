@@ -13,7 +13,6 @@ int main(void)
 	{
 		if (isatty(STDIN_FILENO))
 			prompt_display();
-
 		command = cmd_read();
 
 		tokens = tokenise(command);
@@ -25,7 +24,11 @@ int main(void)
 		if (isExit(tokens))
 			break;
 		if (isEnv(tokens))
+		{
+			free(command);
+			free_tokens(tokens);
 			continue;
+		}
 		if (access(tokens[0], X_OK) == -1)
 		{
 			str_path = witch(tokens[0], fetch_get);
@@ -39,7 +42,23 @@ int main(void)
 			execute_command(tokens[0], tokens);
 		}
 		free(command);
-		free(tokens);
 	}
+	free(command);
+	free_tokens(tokens);
 	return (0);
+}
+
+/**
+ * free_tokens - handle the freeing of the tokens array.
+ * @tokens: array string.
+ */
+void free_tokens(char **tokens)
+{
+	int i;
+
+	for (i = 0; tokens[i] != NULL; i++)
+	{
+		free(tokens[i]);
+	}
+	free(tokens);
 }

@@ -14,6 +14,8 @@
 
 extern char **environ;
 
+void free_tokens(char **tokens);
+
 void prompt_display(void);
 char *cmd_read(void);
 char **tokenise(char *command);
@@ -25,5 +27,10 @@ char *witch(char *filename, char *path);
 
 int isExit(char **tokens);
 int isEnv(char **tokens);
+
+int _strcmp(char *s1, char *s2);
+char *_strcp(char *dest, char *src);
+char *_strdup(char *str);
+char *_strcat(char *dest, char *src);
 
 #endif
