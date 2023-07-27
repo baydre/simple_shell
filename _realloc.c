@@ -10,35 +10,34 @@
 
 void *re_alloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-        void *p;
-        unsigned int x;
+	void *p;
+	unsigned int x;
 
-        if (new_size == 0 && ptr != NULL) /* free memory if reallocate 0 */
-        {
-                free(ptr);
-                return (NULL);
-        }
+	if (new_size == 0 && ptr != NULL)
+	{
+		free(ptr);
+		return (NULL);
+	}
 
-        if (new_size == old_size) /* return ptr if reallocating same old size */
-                return (ptr);
+	if (new_size == old_size)
+		return (ptr);
 
-        if (ptr == NULL) /* malloc new size if ptr is originally null */
-        {
-                p = malloc(new_size);
-                if (p == NULL)
-                        return (NULL);
-                else
-                        return (p);
-        }
+	if (ptr == NULL)
+	{
+		p = malloc(new_size);
+		if (p == NULL)
+		return (NULL);
+		else
+		return (p);
+	}
 
-        p = malloc(new_size); /* malloc and check error */
-        if (p == NULL)
-                return (NULL);
+	p = malloc(new_size);
+	if (p == NULL)
+	return (NULL);
 
-        /* fill up values up till minimum of old or new size */
-        for (x = 0; x < old_size && x < new_size; x++)
-                *((char *)p + x) = *((char *)ptr + x);
-        free(ptr); /* free old ptr */
 
-        return (p);
+	for (x = 0; x < old_size && x < new_size; x++)
+		*((char *)p + x) = *((char *)ptr + x);
+	free(ptr);
+	return (p);
 }
