@@ -3,13 +3,14 @@
 /**
  * error_checker - entry point.
  * @argv: short desc.
- * @tokens: short desc. 
+ * @tokens: short desc.
  * @fullpath: short desc.
  * @exit_status: short desc.
  * Return: zero.
  */
 
-int error_checker(char **argv, char **tokens, char **fullpath, int *exit_status)
+int error_checker(char **argv, char **tokens,
+		char **fullpath, int *exit_status)
 {
 	char *path = _getenv("PATH");
 
