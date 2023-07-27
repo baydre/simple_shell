@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * _unsetenv - short descrp
+ * @name: the name of the env
+ * Return: Returns 0.
+ */
 int _unsetenv(char *name)
 {
 	char **env = environ;
