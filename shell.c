@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	char *command, *str_path, *fetch_get = getenv("PATH");
+	char *command, *str_path, *fetch_get = _getenv("PATH");
 	char **tokens;
 
 	while (1)

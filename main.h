@@ -31,6 +31,11 @@ int isEnv(char **tokens);
 int _strcmp(char *s1, char *s2);
 char *_strcp(char *dest, char *src);
 char *_strdup(char *str);
-char *_strcat(char *dest, char *src);
+char *_strcat(char *dest, const char *src);
+size_t _strlen(const char *str);
+
+void *re_alloc(void *ptr, unsigned int old_size, unsigned int new_size);
+
+char* _getenv(const char* name);
 
 #endif

@@ -18,7 +18,7 @@ char **tokenise(char *command)
 	}
 	while (token != NULL)
 	{
-		tokens[count] = strdup(token);
+		tokens[count] = _strdup(token);
 		if (tokens[count] == NULL)
 		{
 			perror("strdup");

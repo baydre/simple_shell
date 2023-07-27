@@ -33,7 +33,7 @@ char *witch(char *filename, char *path)
 	{
 		return (NULL);
 	}
-	path_cpy = strdup(path);
+	path_cpy = _strdup(path);
 
 	/* Tokenize path */
 	i = 0;
@@ -42,10 +42,10 @@ char *witch(char *filename, char *path)
 
 	while (tokens[i] != NULL)
 	{
-		pathname = malloc(strlen(tokens[i]) + strlen(filename) + 2);
-		strcpy(pathname, tokens[i]);
-		strcat(pathname, "/");
-		strcat(pathname, filename);
+		pathname = malloc(_strlen(tokens[i]) + _strlen(filename) + 2);
+		_strcp(pathname, tokens[i]);
+		_strcat(pathname, "/");
+		_strcat(pathname, filename);
 
 	if (find_file(pathname))
 	{
