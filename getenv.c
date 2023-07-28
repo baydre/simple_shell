@@ -1,19 +1,19 @@
 #include "main.h"
 /**
- * _getenv - short descp
- * @name: the name of the environment
- * Return: Returns NULL.
+ * _getenv - short desc.
+ * @name: environment name.
+ * Return: NULL.
  */
 char *_getenv(const char *name)
 {
 	int i;
-	size_t namelen = _strlen(name);
+	size_t nlen = _strlen(name);
 
 	for (i = 0; environ[i] != NULL; i++)
 	{
-		if (strncmp(name, environ[i], namelen) == 0 && environ[i][namelen] == '=')
+		if (strncmp(name, environ[i], nlen) == 0 && environ[i][nlen] == '=')
 		{
-			return (&environ[i][namelen + 1]);
+			return (&environ[i][nlen + 1]);
 		}
 	}
 	return (NULL);
