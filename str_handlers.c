@@ -1,15 +1,20 @@
 #include "main.h"
 
 /**
+ * _strlen - short description
+ * @str: string
+ * Return: return len.
  */
 size_t _strlen(const char *str)
 {
-    size_t len = 0;
-    while (str[len] != '\0')
-    {
-        len++;
-    }
-    return len;
+	size_t len = 0;
+
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+
+	return (len);
 }
 
 /**
@@ -20,14 +25,16 @@ size_t _strlen(const char *str)
  */
 char *_strcat(char *dest, const char *src)
 {
-    size_t dest_len = _strlen(dest);
-    size_t i;
-    for (i = 0; src[i] != '\0'; i++)
-    {
-        dest[dest_len + i] = src[i];
-    }
-    dest[dest_len + i] = '\0';
-    return dest;
+	size_t dest_len = _strlen(dest);
+	size_t i;
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[dest_len + i] = src[i];
+	}
+	dest[dest_len + i] = '\0';
+
+	return (dest);
 }
 
 /**
@@ -38,28 +45,28 @@ char *_strcat(char *dest, const char *src)
  */
 char *_strdup(char *str)
 {
-        char *duplicate_str;
-        int i, len = 0;
+	char *duplicate_str;
+	int i, len = 0;
 
-        if (str == NULL)
-                return (NULL);
+	if (str == NULL)
+		return (NULL);
 
-        while (*(str + len))
-                len++;
-        len++;
+	while (*(str + len))
+	len++;
+	len++;
 
-        duplicate_str = malloc(sizeof(char) * len);
-        if (duplicate_str == NULL)
-                return (NULL);
+	duplicate_str = malloc(sizeof(char) * len);
+	if (duplicate_str == NULL)
+	return (NULL);
 
-        i = 0;
-        while (i < len)
-        {
-                *(duplicate_str + i) = *(str + i);
-                i++;
-        }
+	i = 0;
+	while (i < len)
+	{
+	*(duplicate_str + i) = *(str + i);
+	i++;
+	}
 
-        return (duplicate_str);
+	return (duplicate_str);
 }
 
 /**
@@ -71,15 +78,15 @@ char *_strdup(char *str)
 
 char *_strcp(char *dest, char *src)
 {
-        int i, len;
+	int i, len;
 
-        for (len = 0; src[len] != '\0'; len++)
-                ;
+	for (len = 0; src[len] != '\0'; len++)
+	;
 
-        for (i = 0; i <= len; i++)
-                dest[i] = src[i];
+	for (i = 0; i <= len; i++)
+		dest[i] = src[i];
 
-        return (dest);
+	return (dest);
 }
 
 /**
@@ -90,13 +97,13 @@ char *_strcp(char *dest, char *src)
  */
 int _strcmp(char *s1, char *s2)
 {
-        int i = 0;
+	int i = 0;
 
-        while (*(s1 + i) == *(s2 + i) && *(s1 + i))
-                i++;
+	while (*(s1 + i) == *(s2 + i) && *(s1 + i))
+	i++;
 
-        if (*(s2 + i))
-                return (*(s1 + i) - *(s2 + i));
-        else
-                return (0);
+	if (*(s2 + i))
+		return (*(s1 + i) - *(s2 + i));
+	else
+		return (0);
 }

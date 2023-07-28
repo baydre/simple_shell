@@ -2,6 +2,8 @@
 
 /**
  * main - entry point.
+ * @argc: number of argument count
+ * @argv: argument vector
  * Return: zero.
  */
 int main(int argc __attribute__((unused)), char **argv)
