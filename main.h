@@ -36,12 +36,13 @@ size_t _strlen(const char *str);
 
 void *re_alloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
-char* _getenv(const char* name);
+char *_getenv(const char *name);
 
 int prompt_handler(size_t *len, char **line);
 int builtin_checker(int count, char **tokens, int *exit_status);
 int command_execute(int *exit_status, char *fullpath, char *tokens[]);
-int error_checker(char **argv, char **tokens, char **fullpath, int *exit_status);
+int error_checker(char **argv, char **tokens,
+		char **fullpath, int *exit_status);
 size_t _getline(char **str);
 int ato_i(char *s);
 int _unsetenv(char *name);
