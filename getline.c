@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _getline - stores into malloced buffer the user's command into shell
+ * _getline - short desc. 
  * @str: buffer
  * Return: number of characters read
  */
@@ -10,15 +10,14 @@ size_t _getline(char **str)
 	ssize_t x = 0, size = 0, t = 0, t2 = 0, n = 0;
 	char buff[1024];
 
-	/* read while there's stdin greater than buffsize; -1 to add a '\0' */
 	while (t2 == 0 && (x = read(STDIN_FILENO, buff, 1024 - 1)))
 	{
-		if (x == -1) /* check if read errored */
+		if (x == -1) 
 			return (-1);
 
-		buff[x] = '\0'; /* terminate buff with \0 to use with _strcat */
+		buff[x] = '\0'; 
 
-		n = 0; /* last loop if \n is found in the stdin read */
+		n = 0;
 		while (buff[n] != '\0')
 		{
 			if (buff[n] == '\n')
@@ -26,8 +25,7 @@ size_t _getline(char **str)
 			n++;
 		}
 
-		/* copy what's read to buff into get_line's buffer */
-		if (t == 0) /* malloc the first time */
+		if (t == 0)
 		{
 			x++;
 			*str = malloc(sizeof(char) * x);
@@ -35,7 +33,7 @@ size_t _getline(char **str)
 			size = x;
 			t = 1;
 		}
-		else /* _realloc via _strcat with each loop */
+		else
 		{
 			size += x;
 			*str = _strcat(*str, buff);

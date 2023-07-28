@@ -7,43 +7,43 @@
 int _unsetenv(char *name)
 {
 	char **env = environ;
-	int len, nameLen;
-	int environ_cnt = 0, i = 0, j;
-	char **new_arr;
+	int len, nlen;
+	int environ_count = 0, i = 0, j;
+	char **_arrNew;
 
 	if (name == NULL)
 		return (-1);
 	while (*env != NULL)
 	{
-		environ_cnt++;
+		environ_count++;
 		env++;
 	}
-	new_arr = malloc((environ_cnt + 1) * sizeof(char *));
-	if (new_arr == NULL)
+	_arrNew = malloc((environ_count + 1) * sizeof(char *));
+	if (_arrNew == NULL)
 		return (-1);
 	env = environ;
-	nameLen = _strlen(name);
+	nlen = _strlen(name);
 	while (*env != NULL)
 	{
-		if (_strncmp(name, *env, nameLen) != 0 || (*env)[nameLen] != '=')
+		if (_strncmp(name, *env, nlen) != 0 || (*env)[nlen] != '=')
 		{
 			len = _strlen(*env);
-			new_arr[i] = malloc((len + 1) * sizeof(char));
-			if (new_arr[i] == NULL)
+			_arrNew[i] = malloc((len + 1) * sizeof(char));
+			if (_arrNew[i] == NULL)
 			{
 				for (j = 0; j < i; j++)
 				{
-					free(new_arr[j]);
+					free(_arrNew[j]);
 				}
-				free(new_arr);
+				free(_arrNew);
 				return (-1);
 			}
-			_strcp(new_arr[i], *env);
+			_strcp(_arrNew[i], *env);
 			i++;
 		}
 		env++;
 	}
-	new_arr[i] = NULL;
-	environ = new_arr;
+	_arrNew[i] = NULL;
+	environ = _arrNew;
 	return (0);
 }
