@@ -29,7 +29,7 @@ int main(int argc __attribute__((unused)), char **argv)
 		}
 		tokens[count] = NULL;
 		fullpath = tokens[0];
-		output = builtin_checker(count, tokens, &exit_status);
+		output = builtin_checker(count, tokens, argv, &exit_status);
 		if (output == 1)
 			break;
 		else if (output == 2)

@@ -39,7 +39,7 @@ void *re_alloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char *_getenv(const char *name);
 
 int prompt_handler(size_t *len, char **line);
-int builtin_checker(int count, char **tokens, int *exit_status);
+int builtin_checker(int count, char**argv, char **tokens, int *exit_status);
 int command_execute(int *exit_status, char *fullpath, char *tokens[]);
 int error_checker(char **argv, char **tokens,
 		char **fullpath, int *exit_status);
@@ -64,5 +64,6 @@ typedef struct path_list
 
 int chd(char **array_cmd, char **arg_vector);
 void _setenv(char *bay, char *value, path_list *present);
+void illegal_number(char **tokens, char **argv, int *exit_status);
 
 #endif

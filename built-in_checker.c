@@ -4,11 +4,12 @@
  * builtin_checker - entry point.
  * @count: short desc.
  * @tokens: short desc.
+ * @argv: short desc.
  * @exit_status: short desc.
  * Return: zero.
  */
 
-int builtin_checker(int count, char **tokens, int *exit_status)
+int builtin_checker(int count, char **tokens, char **argv, int *exit_status)
 {
 	char **env = environ;
 
@@ -19,7 +20,15 @@ int builtin_checker(int count, char **tokens, int *exit_status)
 	{
 		if (tokens[1] != NULL)
 		{
+			if (atoi(tokens[1]))
+				if (atoi(tokens[1]) >= 0)
 			*exit_status = ato_i(tokens[1]);
+				else
+					illegal_number(tokens, argv, exit_status);
+			else
+			{
+				illegal_number(tokens, argv, exit_status);
+			}
 		}
 		return (1);
 	}

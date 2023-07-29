@@ -42,3 +42,23 @@ int error_checker(char **argv, char **tokens,
 
 	return (0);
 }
+
+#include "main.h"
+
+/**
+ * illegal_number - short desc.
+ * @tokens: arrays
+ * @argv: cmdln arguments array
+ * @exit_status: exit status
+ * Return: zero
+ */
+void illegal_number(char **tokens, char **argv, int *exit_status)
+{
+	write(STDERR_FILENO, argv[0], _strlen(argv[0]));
+	write(STDERR_FILENO, ": 1: ", 5);
+	write(STDERR_FILENO, tokens[0], _strlen(tokens[0]));
+	write(STDERR_FILENO, ": Illegal number: ", 18);
+	write(STDERR_FILENO, tokens[1], _strlen(tokens[1]));
+	write(STDERR_FILENO, "\n", 1);
+	*exit_status = 2;
+}
