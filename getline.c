@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _getline - short desc. 
+ * _getline - short desc.
  * @str: buffer
  * Return: number of characters read
  */
@@ -12,10 +12,10 @@ size_t _getline(char **str)
 
 	while (t2 == 0 && (x = read(STDIN_FILENO, buff, 1024 - 1)))
 	{
-		if (x == -1) 
+		if (x == -1)
 			return (-1);
 
-		buff[x] = '\0'; 
+		buff[x] = '\0';
 
 		n = 0;
 		while (buff[n] != '\0')

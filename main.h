@@ -48,5 +48,20 @@ int ato_i(char *s);
 int _unsetenv(char *name);
 int _strncmp(char *str1, char *str2, int n);
 
+/**
+ * struct path_list - a struct made for nodes out of enviroment variable path
+ * @path: enviroment variable path
+ * @count: count of the path
+ * @next: points to the next node
+ */
+
+typedef struct path_list
+{
+	char *path;
+	unsigned int count;
+	struct path_list *next;
+} path_list;
+
+int chd(char **array_cmd, char **arg_vector);
 
 #endif
