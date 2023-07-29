@@ -63,5 +63,6 @@ typedef struct path_list
 } path_list;
 
 int chd(char **array_cmd, char **arg_vector);
+void _setenv(char *bay, char *value, path_list *present);
 
 #endif
